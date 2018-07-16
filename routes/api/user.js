@@ -1,12 +1,12 @@
 const router = require("express").Router();
-const articleController = require("../../controllers/userController");
+const userController = require("../../controllers/userController");
 
 // Matches with "/api/user"
 router.route("/")
 
   .post(userController.create);
 
-// Matches with "/api/articles/:id"
+// Matches with "/api/user/:id"
 
 
 module.exports = router;

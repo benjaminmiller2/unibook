@@ -1,6 +1,6 @@
 const db = require("../models");
 
-// Defining methods for the articleController
+// Defining methods for the userController
 module.exports = {
   create: function(req, res) {
     if (req.body.email && req.body.username && req.body.password && req.body.passwordConf) {

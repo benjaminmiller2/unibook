@@ -3,6 +3,28 @@ import Hero from "../components/Hero";
 import Container from "../components/Container";
 import Row from "../components/Row";
 import Col from "../components/Col";
+import API from "../utils/API";
+
+//methods
+const saveUser = () => {
+  let userEmail = document.getElementById('js-email').value;
+  let userName = document.getElementById('js-username').value;
+  let userPassword = document.getElementById('js-password').value;
+  let userPasswordConfirm = document.getElementById('js-confirm').value;
+
+  if (userEmail && userName && userPassword && userPasswordConfirm){
+    API.saveUser({
+      email: userEmail,
+      username: userName,
+      password: userPassword,
+      passwordConf: userPasswordConfirm
+    });
+    console.log(userEmail, userName, userPassword, userPasswordConfirm);
+  }else{
+    console.log('React is quite stupid.')
+  }
+
+}
 
 const About = () => (
   <div>
@@ -25,7 +47,7 @@ const About = () => (
           </p>
           <p className = "text">
             Post-final days never looked this easy, happy selling!
-           
+          
           </p>
           <div class="w3"/>
 			<div class="signin-form profile"/>
@@ -45,11 +67,11 @@ const About = () => (
 				
 				<div class="login-form"/>
 					<form action="/" method="post"/>
-						<input type="text" name="email" placeholder="E-mail" required=""/>
-						<input type="text" name="username" placeholder="Username" required=""/>
-						<input type="password" name="password" placeholder="Password" required=""/>
-						<input type="password" name="passwordConf" placeholder="Confirm Password" required=""/>
-						<input type="submit" value="REGISTER"/>
+						<input type="text" name="email" placeholder="E-mail" id="js-email" required=""/>
+						<input type="text" name="username" placeholder="Username" id="js-username" required=""/>
+						<input type="password" name="password" placeholder="Password" id="js-password" required=""/>
+						<input type="password" name="passwordConf" placeholder="Confirm Password" id="js-confirm" required=""/>
+						<input type="submit" value="REGISTER" onClick={() => saveUser()}/>
 
         </Col>
       </Row>
