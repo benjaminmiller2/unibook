@@ -49,11 +49,11 @@ const About = () => (
             Post-final days never looked this easy, happy selling!
           
           </p>
-          <div class="w3"/>
-			<div class="signin-form profile"/>
+          <div className="w3"/>
+			<div className="signin-form profile"/>
 				<h3>Login</h3>
 				
-				<div class="login-form" />
+				<div className="login-form" />
 					<form action="/" method="post"/>
 						<input type="text" name="logemail" placeholder="E-mail" required=""/>
 						<input type="password" name="logpassword" placeholder="Password" required=""/>
@@ -61,11 +61,11 @@ const About = () => (
 							<input type="submit" value="LOGIN NOW"/>
 					
 
-		<div class="agile" />
-			<div class="signin-form profile"/>
+		<div className="agile" />
+			<div className="signin-form profile"/>
 				<h3>Register</h3>
 				
-				<div class="login-form"/>
+				<div className="login-form"/>
 					<form action="/" method="post"/>
 						<input type="text" name="email" placeholder="E-mail" id="js-email" required=""/>
 						<input type="text" name="username" placeholder="Username" id="js-username" required=""/>

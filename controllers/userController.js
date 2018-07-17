@@ -3,6 +3,7 @@ const db = require("../models");
 // Defining methods for the userController
 module.exports = {
   create: function(req, res) {
+    console.log(req.body)
     if (req.body.email && req.body.username && req.body.password && req.body.passwordConf) {
 
       var userData = {
@@ -11,14 +12,19 @@ module.exports = {
         password: req.body.password,
         passwordConf: req.body.passwordConf,
       }
+      console.log(userData)
       //use schema.create to insert data into the db
-      User.create(userData, function (err, user) {
+      db.User.create(userData, function (err, user) {
         if (err) {
-          return next(err)
+          console.log(err)
+          return res.sendStatus(500)
         } else {
           return res.redirect('/dashboard');
         }
       });
+    }
+    else {
+      res.sendStatus(400);
     }
   }
 
