@@ -28,7 +28,7 @@ class LoginForm extends Component {
         axios
             .post('/api/user/login', {
                 username: this.state.username,
-                password: this.state.password
+                password: this.state.password,
             })
             .then(response => {
                 console.log('login response: ')
