@@ -18,9 +18,7 @@ class App extends Component {
     super(props)
     this.state = {
       loggedIn: false,
-      username: null
-    };
-    this.state = {
+      username: null,
       books: []
     };
 
@@ -39,6 +37,7 @@ class App extends Component {
   }
 
   updateUser (userObject) {
+    console.log(userObject);
     this.setState(userObject)
   }
 

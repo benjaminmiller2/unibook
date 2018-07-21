@@ -11,7 +11,7 @@ import './index.css';
 import Edit from './components/Edit';
 import Create from './components/Create';
 import Show from './components/Show';
-import home from './components/home';
+
 import loginform from './components/login-form';
 import signup from './components/sign-up';
 import Search from './components/Search';

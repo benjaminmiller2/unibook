@@ -43,13 +43,13 @@ class Navbar extends Component {
                                 <Link to="/" className="btn btn-link text-secondary">
                                     <span className="text-light">Home</span>
                                 </Link>
-                                <Link to = "/create" className = "btn btn-link text-secondary">
+                                <Link to = "/Create" className = "btn btn-link text-secondary">
                                     <span className="text-secondary">Create</span>
                                 </Link>
-                                <Link to = "/show" className = "btn btn-link text-secondary">
+                                <Link to = "/Show" className = "btn btn-link text-secondary">
                                     <span className="text-secondary">Show</span>
                                 </Link>
-                                <Link to = "/search" className = "btn btn-link text-secondary">
+                                <Link to = "/Search" className = "btn btn-link text-secondary">
                                     <span className="text-secondary">Search</span>
                                 </Link>
 
