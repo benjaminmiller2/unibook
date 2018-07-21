@@ -9,6 +9,7 @@ const passport = require('./passport');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+
 // Configure body parser for AJAX requests
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -48,6 +49,9 @@ app.use(passport.session()) // calls the deserializeUser
 
 // Add routes, both API and view
 app.use(routes);
+
+
+
 
 // Start the API server
 app.listen(PORT, () =>

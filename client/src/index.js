@@ -14,7 +14,7 @@ import Show from './components/Show';
 import home from './components/home';
 import loginform from './components/login-form';
 import signup from './components/sign-up';
-import Search from './components/Search';
+import search from './components/search';
 
 ReactDOM.render(
 	<Router>
@@ -25,7 +25,7 @@ ReactDOM.render(
         <Route path='/show/:id' component={Show} />
 		<Route path='/signup' component = {signup}/>
 		<Route path= '/login' component = {loginform}/>
-		<Route path ='/search' component={Search}/>
+		<Route path ='/search' component={search}/>
       </div>
   </Router>,
 	document.getElementById('root')
