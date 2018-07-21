@@ -14,7 +14,7 @@ import Show from './components/Show';
 
 import loginform from './components/login-form';
 import signup from './components/sign-up';
-import search from './components/search';
+import search from './components/Search';
 
 ReactDOM.render(
 	<Router>
