@@ -1,19 +1,28 @@
 import React, { Component } from 'react';
-import axios from 'axios'
-import { Route, Link } from 'react-router-dom'
+import axios from 'axios';
+//import ReactDOM from 'react-dom';
+//import { Link } from 'react-router-dom';
+import { Route, Link, ReactDom } from 'react-router-dom';
 // components
-import Signup from './components/sign-up'
-import LoginForm from './components/login-form'
-import Navbar from './components/navbar'
-import Home from './components/home'
+import Signup from './components/sign-up';
+import LoginForm from './components/login-form';
+import Navbar from './components/navbar';
+import Home from './components/home';
+import Create from './components/Create';
+import Show from './components/Show';
+
+
 
 class App extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
       loggedIn: false,
       username: null
-    }
+    };
+    this.state = {
+      books: []
+    };
 
     this.getUser = this.getUser.bind(this)
     this.componentDidMount = this.componentDidMount.bind(this)
@@ -22,6 +31,11 @@ class App extends Component {
 
   componentDidMount() {
     this.getUser()
+     axios.get('/api/book')
+      .then(res => {
+        this.setState({ books: res.data });
+        console.log(this.state.books);
+      });
   }
 
   updateUser (userObject) {
@@ -74,10 +88,19 @@ class App extends Component {
           render={() =>
             <Signup/>}
         />
+        <Route
+          exact path = "/Create"
+          component = {Create} 
+        />
+        <Route 
+          exact path = "/Show"
+          component = {Show}
+          />
 
       </div>
     );
   }
+  
 }
 
 export default App;

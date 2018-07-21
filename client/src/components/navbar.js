@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Redirect } from 'react-router-dom'
 import { Route, Link } from 'react-router-dom'
 import '../App.css';
 import axios from 'axios'
@@ -39,20 +38,34 @@ class Navbar extends Component {
                         {loggedIn ? (
                             <section className="navbar-section">
                                 <Link to="/logout" className="btn btn-link text-secondary" onClick={this.logout}>
-                                <span className="text-secondary">logout</span></Link>
+                                    <span className="text-secondary">logout</span>
+                                </Link>
+                                <Link to="/" className="btn btn-link text-secondary">
+                                    <span className="text-light">Home</span>
+                                </Link>
+                                <Link to = "/create" className = "btn btn-link text-secondary">
+                                    <span className="text-secondary">Create</span>
+                                </Link>
+                                <Link to = "/show" className = "btn btn-link text-secondary">
+                                    <span className="text-secondary">Show</span>
+                                </Link>
+                                <Link to = "/search" className = "btn btn-link text-secondary">
+                                    <span className="text-secondary">Search</span>
+                                </Link>
+
+                                
+                             
 
                             </section>
                         ) : (
                                 <section className="navbar-section">
-                                    <Link to="/" className="btn btn-link text-secondary">
-                                        <span className="text-light">Home</span>
-                                        </Link>
-                                    <Link to="/login" className="btn btn-link text-secondary">
+                                    
+                                <Link to="/login" className="btn btn-link text-secondary">
                                     <span className="text-light">Login</span>
-				</Link>
-                                    <Link to="/signup" className="btn btn-link">
+				                </Link>
+                                <Link to="/signup" className="btn btn-link">
                                     <span className="text-light">Sign up</span>
-				</Link>
+				                </Link>
 
                                 </section>
                             )}
