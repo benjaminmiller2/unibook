@@ -1,5 +1,9 @@
-.App {
+  
+  .App {
     text-align: center;
+    background-color: rgb(245, 225, 196);
+    height: 50em;
+    padding:10px;
   }
   
   .App-logo {
@@ -8,10 +12,11 @@
   }
   
   .App-header {
-    background-color:orange;
-    height: 5em;
-    padding: 20px;
+    background-color:rgb(173, 187, 226);
+    height: 10em;
+    padding: 50px;
     color: white;
+    
   }
   
   .App-title {
@@ -21,26 +26,37 @@
   .App-intro {
     font-size: large;
   }
-  
-  .navbar {
 
+ 
+  .navbar {
     margin-top: auto;
     margin-bottom: 3em;
-    
   }
+
+  .navbar-brand{
+    padding: 2px;
+    font-size: 2em;
+  }
+
   .navbar-section{
+    padding:5px;
     display: flex;
     justify-content: space-around;
-
   }
+  .form-control{
+    background: rgb(241, 241, 241);
+  }
+  .text-secondary{
+    font-size: 20px;
+    padding:3px;
+   }
   #top-filler {
     margin-bottom: auto;
   }
-  
   #nav-container {
     align-items: flex-end;
   }
-  
+
   @keyframes App-logo-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }

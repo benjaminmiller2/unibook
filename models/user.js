@@ -8,9 +8,15 @@ const userSchema = new Schema({
 
 	username: { type: String, unique: false, required: false },
 	password: { type: String, unique: false, required: false },
-	email: {type: String, unique: false, required: false}
-
-})
+	email: {type: String, unique: false, required: false},
+	books: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: "books"
+			
+		}
+	]
+});
 
 // Define schema methods
 userSchema.methods = {

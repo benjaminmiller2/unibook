@@ -22,10 +22,10 @@ ReactDOM.render(
         <Route exact path='/' component={App} />
         <Route path='/edit/:id' component={Edit} />
         <Route path='/create' component={Create} />
-        <Route path='/show/:id' component={Show} />
-		<Route path='/signup' component = {signup}/>
-		<Route path= '/login' component = {loginform}/>
-		<Route path ='/search' component={search}/>
+        <Route path='/show' component={Show} />
+		    <Route path='/signup' component = {signup}/>
+        <Route path= '/login' component = {loginform}/>
+        <Route path ='/search' component={search}/>
       </div>
   </Router>,
 	document.getElementById('root')

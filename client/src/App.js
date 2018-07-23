@@ -64,42 +64,61 @@ class App extends Component {
 
   render() {
     return (
+      <div className= "container">
       <div className="App">
+
+      
    
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <p>Join the party, {this.state.username}!</p>
+          <p class="lead">Join the party, {this.state.username}!</p>
         }
         {/* Routes to different components */}
-        <Route
-          exact path="/"
-          component={Home} />
-        <Route
-          path="/login"
-          render={() =>
-            <LoginForm
-              updateUser={this.updateUser}
-            />}
-        />
-        <Route
-          path="/signup"
-          render={() =>
-            <Signup/>}
-        />
-        <Route
-          exact path = "/Create"
-          component = {Create} 
-        />
-        <Route 
-          exact path = "/Show"
-          component = {Show}
+          <Route
+            exact path="/"
+            component={Home}
+            
+             />
+          <Route
+            path="/login"
+            render={() =>
+              <LoginForm
+                updateUser={this.updateUser}
+              />}
           />
+          <Route
+            path="/signup"
+            render={() =>
+              <Signup/>}
+          />
+          <Route
+            exact path = "/Create"
+            component = {Create} 
+          />
+          <Route 
+            exact path = "/Show"
+            component = {Show}
+            />
 
+      </div>
       </div>
     );
   }
   
 }
+// This is a middleware. 
+// This checks to make sure the user is logged in
+// before allowing them to continue to the page 
+
+    // **** This should be put in every get request in this file
+    function isLoggedIn(req, res, next) {
+      if(req.isAuthenticated()){
+          return next();
+      }
+      // if the user is not logged in, redirect them to signup
+      res.redirect('/signup');
+  }
+
 
 export default App;
