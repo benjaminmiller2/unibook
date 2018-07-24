@@ -57,47 +57,40 @@ class LoginForm extends Component {
         } else {
             return (
                 <div>
-
-                    <h4>Login</h4>
-                    <form className="form-horizontal">
+                    <form className="col-4 mx-auto border border-1 border-primary p-3 mt-5">
                         <div className="form-group">
-                            <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="username">Username</label>
-                            </div>
-                            <div className="col-3 col-mr-auto">
-                                <input className="form-input"
-                                    type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Username"
-                                    value={this.state.username}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
+                            <lable for="username">Username: </lable>
+                            <input type="text" 
+                            className="form-control" 
+                            id="username" 
+                            name="username" 
+                            placeholder="username"
+                            value={this.state.username}
+                            onChange={this.handleChange}
+                            />
+                            <small id="usernameHelp" className="form-text text-muted">Please enter your Username.</small>
                         </div>
                         <div className="form-group">
-                            <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="password">Password: </label>
-                            </div>
-                            <div className="col-3 col-mr-auto">
-                                <input className="form-input"
-                                    placeholder="password"
-                                    type="password"
-                                    name="password"
-                                    value={this.state.password}
-                                    onChange={this.handleChange}
-                                />
-                            </div>
+                            <lable for="password">Password: </lable>
+                            <input type="text" 
+                            className="form-control" 
+                            id="password" 
+                            name="password" 
+                            placeholder="password"
+                            value={this.state.password}
+                            onChange={this.handleChange}
+                            />
+                            <small id="passwordHelp" className="form-text text-muted">Please enter your password.</small>
                         </div>
-                        <div className="form-group ">
-                            <div className="col-7"></div>
-                            <button
-                                className="btn btn-primary col-1 col-mr-auto"
-                               
-                                onClick={this.handleSubmit}
-                                type="submit">Login</button>
-                        </div>
+                        <button type="submit" class="btn btn-primary" onClick={this.handleSubmit}>Login</button>
                     </form>
+
+
+
+
+
+
+                    
                 </div>
             )
         }

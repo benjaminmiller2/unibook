@@ -1,22 +1,20 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Book from './book';
+
 
 class Show extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      book: {}
+      books: []
     };
   }
 
   componentDidMount() {
-    axios.get('/api/book/'+this.props.match.params.id)
-      .then(res => {
-        this.setState({ book: res.data });
-        console.log(this.state.book);
-      });
+this.getBooks()
   }
 
   delete(id){
@@ -27,33 +25,42 @@ class Show extends Component {
       });
   }
 
+//methods
+getBooks = () =>{
+  axios.get('/api/book/')
+  .then(res => {
+    this.setState({ books: res.data });
+    console.log(this.state.books);
+  });
+
+};
+
+
   render() {
     return (
-      <div class="container">
-        <div class="panel panel-default">
-          <div class="panel-heading">
-            <h3 class="panel-title">
-              {this.state.book.title}
-            </h3>
-          </div>
-          <div class="panel-body">
-            <h4><Link to="/"><span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Book List</Link></h4>
-            <dl>
-              <dt>ISBN:</dt>
-              <dd>{this.state.book.isbn}</dd>
-              <dt>Author:</dt>
-              <dd>{this.state.book.author}</dd>
-              <dt>Description:</dt>
-              <dd>{this.state.book.description}</dd>
-              <dt>Publish Date:</dt>
-              <dd>{this.state.book.published_year}</dd>
-              <dt>Publisher:</dt>
-              <dd>{this.state.book.publisher}</dd>
-            </dl>
-            <Link to={`/edit/${this.state.book._id}`} class="btn btn-success">Edit</Link>&nbsp;
-            <button onClick={this.delete.bind(this, this.state.book._id)} class="btn btn-danger">Delete</button>
-          </div>
+      <div>
+        
+        <div>
+          <h4><Link to="/"><span className="glyphicon glyphicon-th-list" aria-hidden="true"></span> Book List</Link></h4>
         </div>
+
+          <div className="col-12 d-flex flex-wrap justify-content-around">
+            
+            {this.state.books.map(book => (
+              <Book
+              title={book.title}
+              isbn={book.isbn}
+              author={book.author}
+              description={book.description}
+              published_year={book.published_year}
+              publisher={book.publisher}
+              id={book._id}
+                />
+            ))}
+            
+          </div>
+     
+
       </div>
     );
   }

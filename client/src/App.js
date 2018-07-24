@@ -66,13 +66,19 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="App">
-
+      <div className="">
+        <div>
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        </div>
+
+        <div className="d-flex justify-content-center align-middle">
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <p>Join the party, {this.state.username}!</p>
+          <h5 className="pt-2">~ {this.state.username} is logged in! ~</h5>
         }
+        </div>
+
+        <div className="container-fluid">
         {/* Routes to different components */}
    
         <Route
@@ -103,6 +109,7 @@ class App extends Component {
           exact path = "/Search"
           component = {Search}
           />
+          </div>
 
       </div>
       </Router>

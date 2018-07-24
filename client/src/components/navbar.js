@@ -33,24 +33,26 @@ class Navbar extends Component {
         return (
             <div>
 
-                <header className="navbar App-header" id="nav-container">
-                    <div className="col-4" >
+                <header className="w-100 p-3 bg-purple" id="nav-container">
+                    <div className="" >
                         {loggedIn ? (
-                            <section className="navbar-section">
-                                <Link to="/logout" className="btn btn-link text-secondary" onClick={this.logout}>
-                                    <span className="text-secondary">logout</span>
-                                </Link>
+                            <section className="w-100 d-flex justify-content-around">
+ 
                                 <Link to="/" className="btn btn-link text-secondary">
                                     <span className="text-light">Home</span>
                                 </Link>
-                                <Link to = "/Create" className = "btn btn-link text-secondary">
-                                    <span className="text-secondary">Create</span>
-                                </Link>
                                 <Link to = "/Show" className = "btn btn-link text-secondary">
-                                    <span className="text-secondary">Show</span>
+                                    <span className="text-light">Show</span>
                                 </Link>
+                                <Link to = "/Create" className = "btn btn-link text-secondary">
+                                    <span className="text-light">Create</span>
+                                </Link>
+
                                 <Link to = "/Search" className = "btn btn-link text-secondary">
-                                    <span className="text-secondary">Search</span>
+                                    <span className="text-light">Search</span>
+                                </Link>                               
+                                <Link to="/logout" className="btn btn-link text-secondary" onClick={this.logout}>
+                                    <span className="text-light">Logout</span>
                                 </Link>
 
                                 
