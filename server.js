@@ -8,7 +8,6 @@ const MongoStore = require('connect-mongo')(session);
 const passport = require('./passport');
 const app = express();
 const PORT = process.env.PORT || 3001;
-const bookRoutes = require('./routes/api/book');
 
 
 // Configure body parser for AJAX requests
@@ -50,8 +49,6 @@ app.use(passport.session()) // calls the deserializeUser
 
 // Add routes, both API and view
 app.use(routes);
-
-
 
 
 
