@@ -1,9 +1,11 @@
 import React, { Component } from "react";
+import axios from 'axios';
+
 import API from "../utils/API";
-import Navbar from "./navbar";
 
 
 class Search extends Component {
+
   state={search: ""}
   onChange = event => {
     this.setState ({search: event.target.value})
@@ -11,32 +13,10 @@ class Search extends Component {
   }
   render() {
     return (
-      <div className ="container">
-       
-       <Navbar loggedIn="true"/>
-        <form class="navbar-form navbar-left" role="search">
+      <form>
+        <input onChange={this.onChange} name="search" type="text" placeholder="This is where users will search" value={this.state.search}/>
         
-            <div class="form-group">
-            <input onChange={this.onChange} type="text"  name="search" class="form-control" placeholder="Search" value={this.state.search}/>
-            </div>
-            <button type="submit" class="btn btn-default">Submit</button>
-
-            <div>
-            <div class="card">
-  <div class="card-header">
-  <h2> Search Results </h2>
-  </div>
-  <div class="card-body">
-  
-  </div>
-</div>
-              </div>
-            
-          </form>
-        </div>
-     
-        
-         
+      </form>
     )
   }
 

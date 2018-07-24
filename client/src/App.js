@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import axios from 'axios';
 //import ReactDOM from 'react-dom';
 //import { Link } from 'react-router-dom';
-import { Route, Link, ReactDom } from 'react-router-dom';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 // components
 import Signup from './components/sign-up';
 import LoginForm from './components/login-form';
 import Navbar from './components/navbar';
 import Home from './components/home';
-import Sell from './components/Sell';
+import Create from './components/Create';
 import Show from './components/Show';
+import Search from './components/Search';
 
 
 
@@ -64,61 +65,50 @@ class App extends Component {
 
   render() {
     return (
-      <div className= "container">
+      <Router>
       <div className="App">
 
-      
-   
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <p class="lead">Join the party, {this.state.username}!</p>
+          <p>Join the party, {this.state.username}!</p>
         }
         {/* Routes to different components */}
-          <Route
-            exact path="/"
-            component={Home}
-            
-             />
-          <Route
-            path="/login"
-            render={() =>
-              <LoginForm
-                updateUser={this.updateUser}
-              />}
+   
+        <Route
+          exact path="/"
+          component={Home} />
+        <Route
+          path="/login"
+          render={() =>
+            <LoginForm
+              updateUser={this.updateUser}
+            />}
+        />
+        <Route
+          path="/signup"
+          render={() =>
+          
+            <Signup/>}
+        />
+        <Route
+          exact path = "/Create"
+          component = {Create} 
+        />
+        <Route 
+          exact path = "/Show"
+          component = {Show}
           />
-          <Route
-            path="/signup"
-            render={() =>
-              <Signup/>}
+                  <Route 
+          exact path = "/Search"
+          component = {Search}
           />
-          <Route
-            exact path = "/Sell"
-            component = {Sell} 
-          />
-          <Route 
-            exact path = "/Show"
-            component = {Show}
-            />
 
       </div>
-      </div>
+      </Router>
     );
   }
   
 }
-// This is a middleware. 
-// This checks to make sure the user is logged in
-// before allowing them to continue to the page 
-
-    // **** This should be put in every get request in this file
-    function isLoggedIn(req, res, next) {
-      if(req.isAuthenticated()){
-          return next();
-      }
-      // if the user is not logged in, redirect them to signup
-      res.redirect('/signup');
-  }
-
 
 export default App;

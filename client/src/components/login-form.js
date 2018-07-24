@@ -35,10 +35,10 @@ class LoginForm extends Component {
                 console.log(response)
                 if (response.status === 200) {
                     // update App.js state
-                   // this.props.updateUser({
-                     //   loggedIn: true,
-                   //     username: response.data.username
-                 //   })
+                    this.props.updateUser({
+                        loggedIn: true,
+                        username: response.data.username
+                    })
                     // update the state to redirect to home
                     this.setState({
                         redirectTo: '/'
@@ -57,8 +57,8 @@ class LoginForm extends Component {
         } else {
             return (
                 <div>
-                    <h4>Login</h4>
 
+                    <h4>Login</h4>
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">

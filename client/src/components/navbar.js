@@ -1,10 +1,7 @@
-import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import { render } from 'react-dom';
+import React, { Component } from 'react'
+import { Route, Link } from 'react-router-dom'
 import '../App.css';
-import axios from 'axios';
-
-
+import axios from 'axios'
 
 class Navbar extends Component {
     constructor() {
@@ -35,28 +32,30 @@ class Navbar extends Component {
         
         return (
             <div>
+
                 <header className="navbar App-header" id="nav-container">
                     <div className="col-4" >
                         {loggedIn ? (
-                        
                             <section className="navbar-section">
-                    
-                                
-                                <Link to="/">
-                                    <span className="navbar-brand"><i class="fas fa-book"></i> UniBooks</span>
+                                <Link to="/logout" className="btn btn-link text-secondary" onClick={this.logout}>
+                                    <span className="text-secondary">logout</span>
                                 </Link>
-                                <Link to = "/Sell" className = "btn btn-link text-secondary">
-                                    <span className="text-secondary">Sell</span>
+                                <Link to="/" className="btn btn-link text-secondary">
+                                    <span className="text-light">Home</span>
                                 </Link>
-                                <Link to = "/Show/" className = "btn btn-link text-secondary">
+                                <Link to = "/Create" className = "btn btn-link text-secondary">
+                                    <span className="text-secondary">Create</span>
+                                </Link>
+                                <Link to = "/Show" className = "btn btn-link text-secondary">
                                     <span className="text-secondary">Show</span>
                                 </Link>
                                 <Link to = "/Search" className = "btn btn-link text-secondary">
                                     <span className="text-secondary">Search</span>
                                 </Link>
-                                <Link to="/logout" className="btn btn-link text-secondary" onClick={this.logout}>
-                                    <span className="text-secondary">Logout</span>
-                                </Link>
+
+                                
+                             
+
                             </section>
                         ) : (
                                 <section className="navbar-section">
@@ -76,8 +75,8 @@ class Navbar extends Component {
             </div>
 
         );
-   
+
     }
 }
- export default Navbar;
 
+export default Navbar
