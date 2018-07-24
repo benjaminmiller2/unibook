@@ -3,6 +3,7 @@ import axios from 'axios';
 
 import API from "../utils/API";
 
+const API_KEY = process.env.GBOOKSAPI || "AIzaSyBwhv-evXRKbUdAo2Flhy6WGD2ngY_W7zE"
 
 class Search extends Component {
 
