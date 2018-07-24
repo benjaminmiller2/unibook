@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Navbar from './navbar';
 
 
-class Create extends Component {
+class Sell extends Component {
 
   constructor() {
     super();
@@ -40,7 +40,7 @@ class Create extends Component {
     return (
     
       <div className="container">
-    <Navbar loggedIn="true" />
+      <Navbar loggedIn="true" />
 
         <div className="panel panel-default">
           <div className="panel-heading">
@@ -75,7 +75,7 @@ class Create extends Component {
                 <label for="publisher">Publisher:</label>
                 <input type="text" className="form-control" name="publisher" value={publisher} onChange={this.onChange} placeholder="Publisher" />
               </div>
-              <button type="submit" className="btn btn-default">Submit</button>
+              <button type="Submit" className="btn btn-default">Submit</button>
             </form>
           
           </div>
@@ -88,4 +88,4 @@ class Create extends Component {
   }
 }
 
-export default Create;
+export default Sell;

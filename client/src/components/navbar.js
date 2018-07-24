@@ -45,7 +45,7 @@ class Navbar extends Component {
                                 <Link to="/">
                                     <span className="navbar-brand"><i class="fas fa-book"></i> UniBooks</span>
                                 </Link>
-                                <Link to = "/Create" className = "btn btn-link text-secondary">
+                                <Link to = "/Sell" className = "btn btn-link text-secondary">
                                     <span className="text-secondary">Sell</span>
                                 </Link>
                                 <Link to = "/Show/" className = "btn btn-link text-secondary">

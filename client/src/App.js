@@ -8,7 +8,7 @@ import Signup from './components/sign-up';
 import LoginForm from './components/login-form';
 import Navbar from './components/navbar';
 import Home from './components/home';
-import Create from './components/Create';
+import Sell from './components/Sell';
 import Show from './components/Show';
 
 
@@ -93,8 +93,8 @@ class App extends Component {
               <Signup/>}
           />
           <Route
-            exact path = "/Create"
-            component = {Create} 
+            exact path = "/Sell"
+            component = {Sell} 
           />
           <Route 
             exact path = "/Show"

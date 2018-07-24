@@ -7,6 +7,7 @@ var User = require('../../models/user');
 var passport = require('passport');
 
 
+
 /* GET ALL BOOKS */
 router.get('/Show', isLoggedIn, function(req, res, next) {
   Book.find(function (err, books) {
@@ -25,14 +26,15 @@ router.get('/Show', isLoggedIn, function(req, res, next) {
 //   res.render('Show');
 // });
 
-// router.get('/show', isLoggedIn, function(req, res, next){
-//   console.log("hello");
-//   User.findById(req.session.user.id).populate('books').then(foundUser => {
-//     res.render(Show);
-//     console.log(foundUser);
+router.get('/show', isLoggedIn, function(req, res, next){
+  console.log("hello");
+  User.findById(req.session.user.id).populate('books').then(foundUser => {
+    console.log(foundUser);
+    return res.json(foundUser);
+    
       
-//   });
-// });
+  });
+});
 
 //route to get all books for user and display all books on show page then user can click on one book to take them to show bookid 
 
@@ -44,11 +46,19 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+
+
+router.get('/test', function(req,res){
+  console.log('')
+  return Book.find({}).then(response => res.json(response));
+
+});
 // /* SAVE BOOK */
-router.post('/', isLoggedIn, function(req, res, next) {
-  const book = new Book(req.body);
+router.post('/Show', function(req, res, next) {
+  const Book = new Book(req.body);
   console.log(req.session.user);
-  return book.save()
+
+  return Book.save()
   .then(newTask => res.status(201).json(newTask))
   .catch(next)
  })
