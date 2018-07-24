@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import Navbar from "./navbar";
 
+const API_KEY = process.env.GBOOKSAPI || "AIzaSyBwhv-evXRKbUdAo2Flhy6WGD2ngY_W7zE"
 
 class Search extends Component {
   state={search: ""}
