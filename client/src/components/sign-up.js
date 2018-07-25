@@ -49,7 +49,7 @@ class Signup extends Component {
 						if (response.status === 200) {
 							
 							this.setState({
-								redirectTo: '/'
+								redirectTo: '/login'
 							})
 						}})
 				} else {

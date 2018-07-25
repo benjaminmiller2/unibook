@@ -12,8 +12,25 @@ class Create extends Component {
       author: '',
       description: '',
       published_year: '',
-      publisher: ''
-    };
+      publisher: '',
+      seller: ''
+    }
+  }
+
+  componentDidMount(){
+    this.getSeller()
+  }
+
+  getSeller(){
+    axios.get('/api/user/').then(response => {
+      console.log(response.data)
+      if(response.data.user){
+        this.setState({
+          seller: response.data.user.username
+        })
+        console.log(this.state)
+      }
+    })
   }
   onChange = (e) => {
     const state = this.state
@@ -24,16 +41,16 @@ class Create extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { isbn, title, author, description, published_year, publisher } = this.state;
+    const { isbn, title, author, description, published_year, publisher, seller } = this.state;
 
-    axios.post('/api/book', { isbn, title, author, description, published_year, publisher })
+    axios.post('/api/book', { isbn, title, author, description, published_year, publisher, seller })
       .then((result) => {
         this.props.history.push("/")
       });
   }
 
   render() {
-    const { isbn, title, author, description, published_year, publisher } = this.state;
+    const { isbn, title, author, description, published_year, publisher, seller } = this.state;
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -69,10 +86,15 @@ class Create extends Component {
                 <label for="publisher">Publisher:</label>
                 <input type="text" class="form-control" name="publisher" value={publisher} onChange={this.onChange} placeholder="Publisher" />
               </div>
+              <div class="form-group">
+                <label for="publisher">Seller:</label>
+                <input type="text" class="form-control" name="publisher" value={this.state.seller} onChange={this.onChange} placeholder="Publisher" />
+              </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
           </div>
         </div>
+
       </div>
     );
   }

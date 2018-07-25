@@ -11,6 +11,7 @@ import Home from './components/home';
 import Create from './components/Create';
 import Show from './components/Show';
 import Search from './components/Search';
+import Profile from './components/profile';
 
 
 
@@ -110,6 +111,9 @@ class App extends Component {
           component = {Search}
           />
           </div>
+          <Route
+          exact path="/profile"
+          component={Profile} />
 
       </div>
       </Router>

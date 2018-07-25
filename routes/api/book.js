@@ -19,6 +19,14 @@ router.get('/:id', function(req, res, next) {
   });
 });
 
+/* GET SINGLE BOOK BY SINGLE USER */
+router.get('/:seller', function(req, res, next) {
+  Book.find(req.params.seller, function (err, post) {
+    if (err) return next(err);
+    res.json(post);
+  });
+});
+
 // /* SAVE BOOK */
 router.post('/', function(req, res, next) {
   const book = new Book(req.body);

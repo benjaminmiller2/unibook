@@ -41,6 +41,9 @@ class Navbar extends Component {
                                 <Link to="/" className="btn btn-link text-secondary">
                                     <span className="text-light">Home</span>
                                 </Link>
+                                <Link to="/profile" className="btn btn-link text-secondary">
+                                    <span className="text-light">Profile</span>
+                                </Link>
                                 <Link to = "/Show" className = "btn btn-link text-secondary">
                                     <span className="text-light">Show</span>
                                 </Link>
