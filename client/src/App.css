@@ -1,7 +1,20 @@
 .App {
     text-align: center;
   }
+  .card{
+    padding:15px;
+    border-color: rgb(15, 15, 15);
+    border-width: 3px;
   
+  }
+  .card-img-top{
+    padding-bottom: 14px;
+  }
+  .card-body{
+    font-family: "Verdana";
+    background-color: rgb(198, 198, 216);
+    
+  }
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
     height: 80px;
@@ -31,6 +44,7 @@
   .navbar-section{
     display: flex;
     justify-content: space-around;
+    
 
   }
   #top-filler {
@@ -39,14 +53,62 @@
   
   #nav-container {
     align-items: flex-end;
+    justify-content: center;
+    margin-top: 20px;
+    color:black;
+    
   }
 
   .bg-purple{
-    background-color: purple;
+    height:160px;
+    background-color: rgb(166, 184, 226);
+    opacity: 0.7;
+    
+  }
+
+  .profileHeader{
+    padding: 15px;
+    font-family: "verdana";
+    font-size: 20px;
   }
 
   
   @keyframes App-logo-spin {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
+  }
+  .w-100{
+    padding:40px;
+    
+    justify-content: space-around;
+
+ 
+  }
+  .text-secondary{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 30px;
+    
+  }
+  .homeTitle{
+    font-size: 120px;
+    font-family:'Fredericka the Great', cursive;
+  
+  }
+  .pt-2{
+    font-family:'Fredericka the Great', cursive;
+    padding-top: 20px;
+    padding-left: 15px;
+    font-size: 30px;
+
+  }
+  .homeBody{
+  
+    background-color: #fff; 
+    background-image: 
+    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.6em
+  }
+  .list{
+    margin-left: 50px;
   }

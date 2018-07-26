@@ -36,26 +36,26 @@ class Navbar extends Component {
                 <header className="w-100 p-3 bg-purple" id="nav-container">
                     <div className="" >
                         {loggedIn ? (
-                            <section className="w-100 d-flex justify-content-around">
+                            <section className="w-100 d-flex ">
  
                                 <Link to="/" className="btn btn-link text-secondary">
-                                    <span className="text-light">Home</span>
+                                    <span className="text-dark">Home</span>
                                 </Link>
                                 <Link to="/profile" className="btn btn-link text-secondary">
-                                    <span className="text-light">Profile</span>
+                                    <span className="text-dark">Profile</span>
                                 </Link>
                                 <Link to = "/Show" className = "btn btn-link text-secondary">
-                                    <span className="text-light">Show</span>
+                                    <span className="text-dark">Show</span>
                                 </Link>
                                 <Link to = "/Create" className = "btn btn-link text-secondary">
-                                    <span className="text-light">Create</span>
+                                    <span className="text-dark">Create</span>
                                 </Link>
 
                                 <Link to = "/Search" className = "btn btn-link text-secondary">
-                                    <span className="text-light">Search</span>
+                                    <span className="text-dark">Search</span>
                                 </Link>                               
                                 <Link to="/logout" className="btn btn-link text-secondary" onClick={this.logout}>
-                                    <span className="text-light">Logout</span>
+                                    <span className="text-dark">Logout</span>
                                 </Link>
 
                                 
