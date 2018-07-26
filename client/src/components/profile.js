@@ -57,11 +57,11 @@ getUserBooks = () =>{
     return (
       <div>
         
-        <div>
+        <div className="profileHeader">
         <h3>Here is your collection.</h3>
         </div>
 
-        <div className="col-12 d-flex flex-wrap justify-content-around">
+        <div className="profileBooks col-12 d-flex flex-wrap justify-content-around">
             
             {this.state.userBooks.map(book => (
               <Book

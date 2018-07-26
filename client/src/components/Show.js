@@ -39,10 +39,7 @@ getBooks = () =>{
   render() {
     return (
       <div>
-        
-        <div>
-          <h4><Link to="/"><span className="glyphicon glyphicon-th-list" aria-hidden="true"></span> Book List</Link></h4>
-        </div>
+    
 
           <div className="col-12 d-flex flex-wrap justify-content-around">
             

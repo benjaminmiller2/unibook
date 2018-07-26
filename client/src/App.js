@@ -72,10 +72,10 @@ class App extends Component {
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         </div>
 
-        <div className="d-flex justify-content-center align-middle">
+        <div className="d-flex justify-content-left align-middle">
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <h5 className="pt-2">~ {this.state.username} is logged in! ~</h5>
+          <h5 className="pt-2"> Hello {this.state.username}! </h5>
         }
         </div>
 
