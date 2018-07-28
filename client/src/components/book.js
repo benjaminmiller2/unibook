@@ -1,30 +1,28 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 
 const Book = ({title, author, isbn, id, description, published_date, publisher, image, price, handleClick, handleData, target}) =>(
   
 
-<div className="card col-5 m-3">
+<div className="card col-5 m-3" type="button" onClick={() => handleData(id)}>
     
       <img className="card-img-top" src={image} alt="Book Image"></img>
       <div className="card-body">
-        <h5 className="card-title">Title: {title}</h5>
-        <p className="card-text">Price: {price}</p>          
-        <p className="card-text">Written by: {author}</p>
-          <p className="card-text">By: {publisher}</p>
-          <p className="card-text">Pub: {published_date}</p>
+                
+   <div class="d-none" id={id}>
+    <div class="card card-body"> 
+      <h5 className="">~{title}~</h5>
+        <p className="card-text">Price: {price}</p> 
+          <p className="card-text">Author: {author}</p>
+          <p className="card-text">Publisher: {publisher}</p>
+          <p className="card-text">Pub Date: {published_date}</p>
           <p className="card-text">ISBN: {isbn}</p>
           <p className="card-text">Description: {description}</p>
-   
-   <div class="collapse" id="collapseExample">
-  <div class="card card-body">
-
-  </div>
-</div> 
-
-        <button type="button" className="btn btn-primary" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" onClick={() => handleData(id)}>Contact Seller</button>
-      
+          <button type="button" className="btn btn-primary">Contact Seller</button>
+    </div>
+  </div> 
       </div>
       
 </div>

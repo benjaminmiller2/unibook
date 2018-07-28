@@ -23,13 +23,13 @@ class Profile extends Component {
 
 //methods
 getUser(){
-    axios.get('/api/user/').then(response => {
-      //console.log(response.data)
-      if(response.data.user){
+    axios.get('/api/user').then(response => {
+      console.log(response.data.username)
+      if(response.data.username){
         this.setState({
-          user: response.data.user.username
+          user: response.data.username
         })
-        //console.log(this.state)
+        console.log(this.state)
       }
     }).then(
         this.getUserBooks()
@@ -64,6 +64,20 @@ getUserBooks = () =>{
       axios.delete('/api/book/'+id)
           .then(this.getUserBooks());
   }
+  handleShowData = (id) =>{
+    // axios.get('/api/book/'+id).then(res => {
+     //console.log(res.data);
+       //console.log(res.data.title);
+      const hidden = document.getElementById(id);
+      if(hidden.classList.contains("d-none")){
+        hidden.classList.remove("d-none")
+       }else{
+         hidden.classList.add("d-none")
+       }
+       
+ 
+     //})
+   }
 
 
   render() {
@@ -88,7 +102,7 @@ getUserBooks = () =>{
               price={book.price}
               image={book.image}
               handleClick={this.handleArticleDelete}
-              handleChange={this.handleBookChange}
+              handleData={this.handleShowData}
                 />
             ))}
             

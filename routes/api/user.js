@@ -51,13 +51,14 @@ router.post(
 )
 
 router.get('/', (req, res, next) => {
-    console.log('===== user!!======')
-    console.log(req.user)
-    if (req.user) {
-        res.json({ user: req.user })
-    } else {
-        res.json({ user: null })
-    }
+    console.log('===== user!!======', req.session.username, req.user)
+    return User.findOne({username: req.user.username})
+    .then(response => {
+        console.log(response)
+       return res.json({ username: response.username,
+                            email: response.email})
+    })
+    .catch(() => res.json({user: null}))
 })
 
 router.post('/logout', (req, res) => {
