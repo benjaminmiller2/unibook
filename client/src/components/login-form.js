@@ -31,16 +31,20 @@ class LoginForm extends Component {
                 password: this.state.password,
             })
             .then(response => {
+                window.sessionStorage.setItem("currentUser", this.state.username)
+                window.sessionStorage.setItem("loggedIn", true)
                 console.log('login response: ')
                 console.log(response)
                 if (response.status === 200) {
                     // update App.js state
                     this.props.updateUser({
-                        loggedIn: true,
-                        username: response.data.username,
+                        loggedIn: window.sessionStorage.loggedIn,
+                        username: window.sessionStorage.currentUser,
                     })
+                    
                     // update the state to redirect to home
                     this.setState({
+
                         redirectTo: '/profile'
                     })
                 }

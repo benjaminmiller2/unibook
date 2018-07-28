@@ -29,10 +29,10 @@ class Create extends Component {
       console.log(response.data)
       if(response.data.user){
         this.setState({
-          seller: response.data.user.username,
-          seller_email: response.data.user.email
+          seller: response.data.username,
+          seller_email: response.data.email
         })
-        console.log(this.state)
+        //console.log(this.state)
       }
     })
   }

@@ -12,6 +12,7 @@ import Create from './components/Create';
 import Show from './components/Show';
 import Search from './components/Search';
 import Profile from './components/profile';
+import Edit from './components/Edit';
 
 
 
@@ -30,7 +31,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.getUser()
+    this.getUser();
      axios.get('/api/book')
       .then(res => {
         this.setState({ books: res.data });
@@ -51,8 +52,8 @@ class App extends Component {
         console.log('Get User: There is a user saved in the server session: ')
 
         this.setState({
-          loggedIn: true,
-          username: response.data.user.username
+          loggedIn: window.sessionStorage.loggedIn,
+          username: window.sessionStorage.currentUser,
         })
       } else {
         console.log('Get user: no user');
@@ -101,6 +102,10 @@ class App extends Component {
         <Route
           exact path = "/Create"
           component = {Create} 
+        />
+         <Route
+          exact path = "/Edit/:id"
+          component = {Edit} 
         />
         <Route 
           exact path = "/Show"

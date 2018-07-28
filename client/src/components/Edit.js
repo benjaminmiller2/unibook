@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 
 class Edit extends Component {
 
@@ -28,15 +29,25 @@ class Edit extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { isbn, title, author, description, published_year, publisher } = this.state.book;
+    const { isbn, title, author, description, published_date, publisher, image, price, seller } = this.state.book;
 
-    axios.put('/api/book/'+this.props.match.params.id, { isbn, title, author, description, published_year, publisher })
+    axios.put('/api/book/'+this.props.match.params.id, { isbn, title, author, description, published_date, publisher, image, price, seller })
       .then((result) => {
-        this.props.history.push("/show/"+this.props.match.params.id)
-      });
+        this.setState({
+
+          redirectTo: '/profile'
+      })
+  
+        //this.props.history.push("/show/"+this.props.match.params.id);
+      })
+       // update the state to redirect to home
+       
   }
 
   render() {
+    if (this.state.redirectTo) {
+      return <Redirect to={{ pathname: this.state.redirectTo }} />
+  } else {
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -66,11 +77,23 @@ class Edit extends Component {
               </div>
               <div class="form-group">
                 <label for="published_date">Published Date:</label>
-                <input type="number" class="form-control" name="published_year" value={this.state.book.published_year} onChange={this.onChange} placeholder="Published Year" />
+                <input type="number" class="form-control" name="published_date" value={this.state.book.published_date} onChange={this.onChange} placeholder="Published Date" />
               </div>
               <div class="form-group">
                 <label for="publisher">Publisher:</label>
                 <input type="text" class="form-control" name="publisher" value={this.state.book.publisher} onChange={this.onChange} placeholder="Publisher" />
+              </div>
+              <div class="form-group">
+                <label for="published_date">Seller:</label>
+                <input type="number" class="form-control" name="seller" value={this.state.book.seller} onChange={this.onChange} placeholder="Seller" />
+              </div>
+              <div class="form-group">
+                <label for="published_date">Image URL:</label>
+                <input type="number" class="form-control" name="image" value={this.state.book.image} onChange={this.onChange} placeholder="Image" />
+              </div>
+              <div class="form-group">
+                <label for="published_date">Price:</label>
+                <input type="number" class="form-control" name="price" value={this.state.book.price} onChange={this.onChange} placeholder="Price" />
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>
@@ -78,7 +101,7 @@ class Edit extends Component {
         </div>
       </div>
     );
-  }
+  }}
 }
 
 export default Edit;

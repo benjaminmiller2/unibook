@@ -16,20 +16,15 @@ class Show extends Component {
 
 
   componentDidMount() {
-this.getBooks()
+this.getBooks();
+
   }
 
-  delete(id){
-    console.log(id);
-    axios.delete('/api/book/'+id)
-      .then((result) => {
-        this.props.history.push("/")
-      });
-  }
 
 //methods
-getBooks = () =>{
+getBooks = (event) =>{
   axios.get('/api/book/')
+  
   .then(res => {
     this.setState({ books: res.data });
     console.log(this.state.books);
@@ -45,11 +40,18 @@ getBooks = () =>{
   }
 
   handleShowData = (id) =>{
-    axios.get('/api/book/'+id).then(res => {
-      console.log(res.data);
-      console.log(res.data.title);
+   // axios.get('/api/book/'+id).then(res => {
+    //console.log(res.data);
+      //console.log(res.data.title);
+     const hidden = document.getElementById(id);
+     if(hidden.classList.contains("d-none")){
+       hidden.classList.remove("d-none")
+      }else{
+        hidden.classList.add("d-none")
+      }
       
-    })
+
+    //})
   }
 
 
@@ -63,6 +65,7 @@ getBooks = () =>{
             {this.state.books.map(book => (
               
               <Book
+              key={book._id}
               title={book.title}
               isbn={book.isbn}
               author={book.author}
