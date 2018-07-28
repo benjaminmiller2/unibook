@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom'
 import '../App.css';
 import axios from 'axios'
 
+
 class Navbar extends Component {
     constructor() {
         super()
@@ -39,23 +40,22 @@ class Navbar extends Component {
                             <section className="w-100 d-flex ">
  
                                 <Link to="/" className="btn btn-link text-secondary">
-                                    <span className="text-dark">Home</span>
+                                 Home
                                 </Link>
                                 <Link to="/profile" className="btn btn-link text-secondary">
-                                    <span className="text-dark">Profile</span>
+                                    Profile
                                 </Link>
                                 <Link to = "/Show" className = "btn btn-link text-secondary">
-                                    <span className="text-dark">Show</span>
+                                   Show
                                 </Link>
                                 <Link to = "/Create" className = "btn btn-link text-secondary">
-                                    <span className="text-dark">Create</span>
-                                </Link>
-
-                                <Link to = "/Search" className = "btn btn-link text-secondary">
-                                    <span className="text-dark">Search</span>
-                                </Link>                               
+                                    Create
+                                </Link>  
+                                <Link to ="/Search" className="btn btn-link text-secondary">
+                                Search
+                                </Link>                        
                                 <Link to="/logout" className="btn btn-link text-secondary" onClick={this.logout}>
-                                    <span className="text-dark">Logout</span>
+                                    Logout
                                 </Link>
 
                                 

@@ -56,11 +56,11 @@ class Create extends Component {
   render() {
     const { isbn, title, author, description, published_date, publisher, seller, price, image } = this.state;
     return (
-      <div class="container">
+      <div className="homeBody d-block col-8 mx-auto mt-3">
         <div class="panel panel-default">
           <div class="panel-heading">
-            <h3 class="panel-title">
-              ADD BOOK
+            <h3 class="createTitle">
+              Add your book
             </h3>
           </div>
           <div class="panel-body">

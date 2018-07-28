@@ -68,7 +68,7 @@ getUserBooks = () =>{
 
   render() {
     return (
-      <div>
+      <div className="homeBody d-block col-8 mx-auto mt-3">
         
         <div className="profileHeader">
         <h3>Here is your collection.</h3>

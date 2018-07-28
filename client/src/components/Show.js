@@ -56,9 +56,9 @@ getBooks = () =>{
 
   render() {
     return (
-      <div>
+      <div className="homeBody">
     
-          <div className="col-12 d-flex flex-wrap justify-content-around">
+          <div className="col-8 d-flex flex-wrap justify-content-around">
             
             {this.state.books.map(book => (
               

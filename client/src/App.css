@@ -1,34 +1,26 @@
 .App {
     text-align: center;
   }
+
   .card{
     padding:15px;
-    border-color: rgb(15, 15, 15);
-    border-width: 3px;
+    border-color: #EFC88B;
+    border-width: 1px;
   
   }
+
   .card-img-top{
     padding-bottom: 14px;
   }
+
   .card-body{
-    font-family: "Verdana";
-    background-color: rgb(198, 198, 216);
-    
+    font-family: "Futura";
+    background-color: #F4E3B2;
   }
+
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
     height: 80px;
-  }
-  
-  .App-header {
-    background-color:orange;
-    height: 5em;
-    padding: 20px;
-    color: white;
-  }
-  
-  .App-title {
-    font-size: 1.5em;
   }
   
   .App-intro {
@@ -36,17 +28,15 @@
   }
   
   .navbar {
-
     margin-top: auto;
     margin-bottom: 3em;
-    
   }
+
   .navbar-section{
     display: flex;
     justify-content: space-around;
-    
-
   }
+
   #top-filler {
     margin-bottom: auto;
   }
@@ -55,20 +45,17 @@
     align-items: flex-end;
     justify-content: center;
     margin-top: 20px;
-    color:black;
-    
   }
 
   .bg-purple{
     height:160px;
-    background-color: rgb(166, 184, 226);
+    background-color:#CF5C36;
     opacity: 0.7;
-    
   }
 
   .profileHeader{
     padding: 15px;
-    font-family: "verdana";
+    font-family: "Futura";
     font-size: 20px;
   }
 
@@ -77,38 +64,52 @@
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
   }
+
   .w-100{
     padding:40px;
-    
     justify-content: space-around;
-
- 
   }
+
   .text-secondary{
     font-family: 'Fredericka the Great', cursive;
     font-size: 30px;
     
   }
+
   .homeTitle{
-    font-size: 120px;
+    font-size: 100px;
     font-family:'Fredericka the Great', cursive;
+    text-align: Center;
   
   }
+
+  .subTitle{
+    font-size: 40px;
+    font-family: 'Futura';
+  }
+
+  .createTitle{
+    font-size: 25px;
+    font-family: 'Futura';
+    text-align: center;
+  }
+
   .pt-2{
-    font-family:'Fredericka the Great', cursive;
+    font-family:'Futura';
     padding-top: 20px;
     padding-left: 15px;
     font-size: 30px;
 
   }
   .homeBody{
-  
     background-color: #fff; 
     background-image: 
     linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
     linear-gradient(#eee .1em, transparent .1em);
-    background-size: 100% 1.6em
+    background-size: 100% 1.6em;
+    border: 1px dotted #D3D5D7;
   }
+
   .list{
     margin-left: 50px;
   }
