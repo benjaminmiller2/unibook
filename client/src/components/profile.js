@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import Book from './book';
+import MyBook from './my-book';
 
 
 class Profile extends Component {
 
   constructor(props) {
     super(props);
+  
     this.state = {
         user: '',
         userBooks: []
@@ -52,6 +53,18 @@ getUserBooks = () =>{
 
 };
 
+    // Edit information in the db
+    handleBookChange = (e) => {
+      axios.put('/api/book/' + e)
+          .then(this.getUserBooks());
+  }
+
+    // When delete article button is clicked, remove article from db
+    handleArticleDelete = (id) => {
+      axios.delete('/api/book/'+id)
+          .then(this.getUserBooks());
+  }
+
 
   render() {
     return (
@@ -64,17 +77,24 @@ getUserBooks = () =>{
         <div className="profileBooks col-12 d-flex flex-wrap justify-content-around">
             
             {this.state.userBooks.map(book => (
-              <Book
+              <MyBook
               title={book.title}
               isbn={book.isbn}
               author={book.author}
               description={book.description}
-              published_year={book.published_year}
+              published_date={book.published_date}
               publisher={book.publisher}
               id={book._id}
+              price={book.price}
+              image={book.image}
+              handleClick={this.handleArticleDelete}
+              handleChange={this.handleBookChange}
                 />
             ))}
             
+            
+
+
           </div>
 
       </div>

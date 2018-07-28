@@ -13,7 +13,10 @@ class Create extends Component {
       description: '',
       published_year: '',
       publisher: '',
-      seller: ''
+      price: '',
+      image: '',
+      seller: '',
+      seller_email: '',
     }
   }
 
@@ -26,7 +29,8 @@ class Create extends Component {
       console.log(response.data)
       if(response.data.user){
         this.setState({
-          seller: response.data.user.username
+          seller: response.data.user.username,
+          seller_email: response.data.user.email
         })
         console.log(this.state)
       }
@@ -41,16 +45,16 @@ class Create extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const { isbn, title, author, description, published_year, publisher, seller } = this.state;
+    const { isbn, title, author, description, published_date, publisher, seller, seller_email, image, price } = this.state;
 
-    axios.post('/api/book', { isbn, title, author, description, published_year, publisher, seller })
+    axios.post('/api/book', { isbn, title, author, description, published_date, publisher, seller, seller_email, image, price })
       .then((result) => {
         this.props.history.push("/profile")
       });
   }
 
   render() {
-    const { isbn, title, author, description, published_year, publisher, seller } = this.state;
+    const { isbn, title, author, description, published_date, publisher, seller, price, image } = this.state;
     return (
       <div class="container">
         <div class="panel panel-default">
@@ -80,15 +84,27 @@ class Create extends Component {
               </div>
               <div class="form-group">
                 <label for="published_date">Published Date:</label>
-                <input type="number" class="form-control" name="published_year" value={published_year} onChange={this.onChange} placeholder="Published Year" />
+                <input type="number" class="form-control" name="published_date" value={published_date} onChange={this.onChange} placeholder="Published Date" />
               </div>
               <div class="form-group">
                 <label for="publisher">Publisher:</label>
                 <input type="text" class="form-control" name="publisher" value={publisher} onChange={this.onChange} placeholder="Publisher" />
               </div>
               <div class="form-group">
+                <label for="publisher">Price:</label>
+                <input type="text" class="form-control" name="price" value={price} onChange={this.onChange} placeholder="Price" />
+              </div>
+              <div class="form-group">
+                <label for="publisher">Image URL:</label>
+                <input type="text" class="form-control" name="image" value={image} onChange={this.onChange} placeholder="Image URL" />
+              </div>
+              <div class="form-group">
                 <label for="publisher">Seller:</label>
-                <input type="text" class="form-control" name="publisher" value={this.state.seller} onChange={this.onChange} placeholder="Publisher" />
+                <input type="text" class="form-control" name="seller" value={this.state.seller} onChange={this.onChange} placeholder="Seller" />
+              </div>
+              <div class="form-group">
+                <label for="publisher">Seller Email:</label>
+                <input type="text" class="form-control" name="seller" value={this.state.seller_email} onChange={this.onChange} placeholder="Seller" />
               </div>
               <button type="submit" class="btn btn-default">Submit</button>
             </form>

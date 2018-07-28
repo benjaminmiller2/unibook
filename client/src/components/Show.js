@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom'
 import Book from './book';
+
 
 
 class Show extends Component {
@@ -12,6 +13,7 @@ class Show extends Component {
       books: []
     };
   }
+
 
   componentDidMount() {
 this.getBooks()
@@ -36,27 +38,45 @@ getBooks = () =>{
 };
 
 
+    // When delete article button is clicked, remove article from db
+    handleArticleDelete = (id) => {
+      axios.delete('/api/book/'+id)
+          .then(console.log('it worked?'));
+  }
+
+  handleShowData = (id) =>{
+    axios.get('/api/book/'+id).then(res => {
+      console.log(res.data);
+      console.log(res.data.title);
+      
+    })
+  }
+
+
+
   render() {
     return (
       <div>
     
-
           <div className="col-12 d-flex flex-wrap justify-content-around">
             
             {this.state.books.map(book => (
+              
               <Book
               title={book.title}
               isbn={book.isbn}
               author={book.author}
               description={book.description}
-              published_year={book.published_year}
+              published_date={book.published_date}
               publisher={book.publisher}
               id={book._id}
-                />
+              price={book.price}
+              image={book.image}
+              handleClick={this.handleArticleDelete}
+              handleData={this.handleShowData}
+                /> 
             ))}
-            
           </div>
-     
 
       </div>
     );
