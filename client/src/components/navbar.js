@@ -46,6 +46,9 @@ class Navbar extends Component {
                                 <Link to="/profile" className="btn btn-link text-secondary">
                                     Profile
                                 </Link>
+                                <Link to="/messages" className="btn btn-link text-secondary">
+                                    Messages
+                                </Link>
                                 <Link to = "/Show" className = "btn btn-link text-secondary">
                                    Show
                                 </Link>
@@ -69,7 +72,7 @@ class Navbar extends Component {
                                 <Link to="/login" className="btn btn-link text-secondary">
                                     <span className="text-light">Login</span>
 				                </Link>
-                                <Link to="/signup" className="btn btn-link">
+                                <Link to="/signup" className="btn btn-link text-secondary">
                                     <span className="text-light">Sign up</span>
 				                </Link>
 

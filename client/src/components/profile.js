@@ -17,9 +17,7 @@ class Profile extends Component {
 
   componentDidMount() {
       this.getUser();
-//this.getUserBooks()
   }
-
 
 //methods
 getUser(){

@@ -13,6 +13,7 @@ import Show from './components/Show';
 import Search from './components/Search';
 import Profile from './components/profile';
 import Edit from './components/Edit';
+import Messages from './components/messages';
 
 
 
@@ -119,6 +120,9 @@ class App extends Component {
           <Route
           exact path="/profile"
           component={Profile} />
+                    <Route
+          exact path="/messages"
+          component={Messages} />
 
       </div>
       </Router>

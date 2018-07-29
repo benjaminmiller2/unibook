@@ -9,6 +9,8 @@ class Show extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      username: '',
+      email:'',
       books: []
     };
   }
@@ -16,6 +18,7 @@ class Show extends Component {
 
   componentDidMount() {
 this.getBooks();
+this.getUser()
 
   }
 
@@ -29,6 +32,12 @@ getBooks = (event) =>{
   });
 
 };
+getUser =() =>{
+  axios.get('/api/user').then(res =>{
+    this.setState({user: res.data.username,
+    email: res.data.email})
+    })
+}
 
 
     // When delete article button is clicked, remove article from db
@@ -48,11 +57,23 @@ getBooks = (event) =>{
     
   }
 
+  handleSubmitMail = (title, seller, image, buyer, buyer_email) => {
+    //const title = title;
+  
+
+    axios.post('/api/message/', { title, seller, buyer, buyer_email, image })
+      .then((result) => {
+        //console.log(this.session)
+        //console.log(result)
+        this.props.history.push("/profile")
+      });
+}
+
   render() {
     return (
       <div className="homeBody">
     
-          <div className="col-8 d-flex flex-wrap justify-content-around">
+          <div className="col-12 d-flex flex-wrap justify-content-around">
             
             {this.state.books.map(book => (
               
@@ -67,7 +88,11 @@ getBooks = (event) =>{
               id={book._id}
               price={book.price}
               image={book.image}
-              handleClick={this.handleArticleDelete}
+              seller={book.seller}
+              seller_email={book.seller_email}
+              buyer={this.state.user}
+              buyer_email={this.state.email}
+              handleClick={this.handleSubmitMail}
               handleData={this.handleShowData}
                 /> 
             ))}
