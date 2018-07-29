@@ -27,12 +27,12 @@ class Create extends Component {
   getSeller(){
     axios.get('/api/user/').then(response => {
       console.log(response.data)
-      if(response.data.user){
+      if(response.data){
         this.setState({
           seller: response.data.username,
           seller_email: response.data.email
         })
-        //console.log(this.state)
+       console.log(this.state.seller)
       }
     })
   }

@@ -22,7 +22,7 @@ if (process.env.NODE_ENV === "production") {
 
 
 
-// Set up promises with mongoose
+// Set up promises with mongoose 
 mongoose.Promise = global.Promise;
 
 // Connect to the Mongo DB
