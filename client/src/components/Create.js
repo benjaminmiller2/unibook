@@ -49,7 +49,7 @@ class Create extends Component {
 
     axios.post('/api/book', { isbn, title, author, description, published_date, publisher, seller, seller_email, image, price })
       .then((result) => {
-        this.props.history.push("/profile")
+       //this.props.history.push("/profile")
       });
   }
 

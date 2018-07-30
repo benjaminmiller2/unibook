@@ -38,7 +38,7 @@ class Navbar extends Component {
                 <header className="w-100 p-3 bg" id="nav-container">
                     <div className="" >
                         {loggedIn ? (
-                            <section className="w-100 d-flex ">
+                            <section className="w-100 d-flex">
  
                                 <Link to="/" className="navTitle">
                                  Home
