@@ -56,13 +56,10 @@ class Edit extends Component {
               EDIT BOOK
             </h3>
           </div>
-          <div class="panel-body">
+          <div class="panel-body mb-5">
             <h4><Link to={`/show/${this.state.book._id}`}><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Book List</Link></h4>
             <form onSubmit={this.onSubmit}>
-              <div class="form-group">
-                <label for="isbn">ISBN:</label>
-                <input type="text" class="form-control" name="isbn" value={this.state.book.isbn} onChange={this.onChange} placeholder="ISBN" />
-              </div>
+
               <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" name="title" value={this.state.book.title} onChange={this.onChange} placeholder="Title" />
@@ -82,20 +79,21 @@ class Edit extends Component {
               <div class="form-group">
                 <label for="publisher">Publisher:</label>
                 <input type="text" class="form-control" name="publisher" value={this.state.book.publisher} onChange={this.onChange} placeholder="Publisher" />
-              </div>
+              </div>          
               <div class="form-group">
-                <label for="published_date">Seller:</label>
-                <input type="number" class="form-control" name="seller" value={this.state.book.seller} onChange={this.onChange} placeholder="Seller" />
+                <label for="isbn">ISBN:</label>
+                <input type="text" class="form-control" name="isbn" value={this.state.book.isbn} onChange={this.onChange} placeholder="ISBN" />
+              </div>              
+              <div class="form-group">
+                <label for="published_date">Price:</label>
+                <input type="number" class="form-control" name="price" value={this.state.book.price} onChange={this.onChange} placeholder="Price" />
               </div>
               <div class="form-group">
                 <label for="published_date">Image URL:</label>
                 <input type="number" class="form-control" name="image" value={this.state.book.image} onChange={this.onChange} placeholder="Image" />
               </div>
-              <div class="form-group">
-                <label for="published_date">Price:</label>
-                <input type="number" class="form-control" name="price" value={this.state.book.price} onChange={this.onChange} placeholder="Price" />
-              </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+
+              <button type="submit" class="btn button-color mb-3">Submit</button>
             </form>
           </div>
         </div>

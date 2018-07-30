@@ -70,8 +70,8 @@ render() {
 	
 		return (
 			<div className="pt-2">
-				<center>Sign up</center>
-				<form className="col-4 mx-auto border border-1 border-primary p-3 mt-5">
+				<center><h1 className="text-secondary">Sign up</h1></center>
+				<form className="col-4 mx-auto border border-1 border-color p-3 mt-5 mb-5">
                         <div className="form-group">
                             <lable for="username">Username: </lable>
                             <input type="text" 
@@ -108,7 +108,7 @@ render() {
                             />
                             <small id="emailHelp" className="form-text text-muted">Please enter your email address.</small>
                         </div>
-                        <button type="submit" class="btn btn-primary" onClick={this.handleSubmit}>Sign Up</button>
+                        <button type="submit" class="btn button-color" onClick={this.handleSubmit}>Sign Up</button>
                     </form>
 			</div>
 

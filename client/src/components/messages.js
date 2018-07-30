@@ -53,11 +53,13 @@ getUserMessages = () =>{
 
 };
 
-    // When delete article button is clicked, remove article from db
+    // When delete message button is clicked, remove article from db
     handleArticleDelete = (id) => {
       axios.delete('/api/message/'+ id)
           .then(this.getUserMessages());
   }
+
+
 
   render() {
     return (
@@ -71,6 +73,7 @@ getUserMessages = () =>{
             
             {this.state.userMessages.map(message => (
               <MyMessage
+
               title={message.title}
               id={message._id}
               image={message.image}

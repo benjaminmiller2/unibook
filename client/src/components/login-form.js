@@ -44,8 +44,7 @@ class LoginForm extends Component {
                     
                     // update the state to redirect to home
                     this.setState({
-
-                        redirectTo: '/profile'
+                        redirectTo: '/'
                     })
                 }
             }).catch(error => {
@@ -60,8 +59,8 @@ class LoginForm extends Component {
             return <Redirect to={{ pathname: this.state.redirectTo }} />
         } else {
             return (
-                <div>
-                    <form className="col-4 mx-auto border border-1 border-primary p-3 mt-5 mb-5">
+                <div className="pt-2">
+                    <form className="col-4 mx-auto border border-color p-3 mt-5 mb-5">
                         <div className="form-group">
                             <lable for="username">Username: </lable>
                             <input type="text" 
@@ -86,7 +85,7 @@ class LoginForm extends Component {
                             />
                             <small id="passwordHelp" className="form-text text-muted">Please enter your password.</small>
                         </div>
-                        <button type="submit" class="btn btn-primary" onClick={this.handleSubmit}>Login</button>
+                        <button type="submit" class="btn button-color" onClick={this.handleSubmit}>Login</button>
                     </form>
 
 

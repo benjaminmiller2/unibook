@@ -50,9 +50,11 @@ getUser =() =>{
 
      const hidden = document.getElementById(id);
      if(hidden.classList.contains("d-none")){
-       hidden.classList.remove("d-none")
+       hidden.classList.remove("d-none");
+       hidden.classList.add("modal")
       }else{
-        hidden.classList.add("d-none")
+        hidden.classList.remove("modal");
+       hidden.classList.add("d-none")
       }
     
   }

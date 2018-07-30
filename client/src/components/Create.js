@@ -56,7 +56,7 @@ class Create extends Component {
   render() {
     const { isbn, title, author, description, published_date, publisher, seller, price, image } = this.state;
     return (
-      <div className="homeBody d-block col-8 mx-auto mt-3">
+      <div className="homeBody d-block col-8 mx-auto mt-3 mb-5">
         <div class="panel panel-default">
           <div class="panel-heading">
             <h3 class="createTitle">
@@ -66,10 +66,7 @@ class Create extends Component {
           <div class="panel-body">
           
             <form onSubmit={this.onSubmit}>
-              <div class="form-group">
-                <label for="isbn">ISBN:</label>
-                <input type="text" class="form-control" name="isbn" value={isbn} onChange={this.onChange} placeholder="ISBN" />
-              </div>
+
               <div class="form-group">
                 <label for="title">Title:</label>
                 <input type="text" class="form-control" name="title" value={title} onChange={this.onChange} placeholder="Title" />
@@ -89,6 +86,10 @@ class Create extends Component {
               <div class="form-group">
                 <label for="publisher">Publisher:</label>
                 <input type="text" class="form-control" name="publisher" value={publisher} onChange={this.onChange} placeholder="Publisher" />
+              </div>              
+              <div class="form-group">
+                <label for="isbn">ISBN:</label>
+                <input type="text" class="form-control" name="isbn" value={isbn} onChange={this.onChange} placeholder="ISBN" />
               </div>
               <div class="form-group">
                 <label for="publisher">Price:</label>
@@ -106,7 +107,7 @@ class Create extends Component {
                 <label for="publisher">Seller Email:</label>
                 <input type="text" class="form-control" name="seller" value={this.state.seller_email} onChange={this.onChange} placeholder="Seller" />
               </div>
-              <button type="submit" class="btn btn-default">Submit</button>
+              <button type="submit" class="btn button-color mb-3">Submit</button>
             </form>
           </div>
         </div>

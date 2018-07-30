@@ -63,24 +63,20 @@ getUserBooks = () =>{
           .then(this.getUserBooks());
   }
   handleShowData = (id) =>{
-    // axios.get('/api/book/'+id).then(res => {
-     //console.log(res.data);
-       //console.log(res.data.title);
-      const hidden = document.getElementById(id);
-      if(hidden.classList.contains("d-none")){
-        hidden.classList.remove("d-none")
-       }else{
-         hidden.classList.add("d-none")
-       }
-       
- 
-     //})
+    const hidden = document.getElementById(id);
+    if(hidden.classList.contains("d-none")){
+      hidden.classList.remove("d-none");
+      hidden.classList.add("modal")
+     }else{
+       hidden.classList.remove("modal");
+      hidden.classList.add("d-none")
+     }
    }
 
 
   render() {
     return (
-      <div className="homeBody d-block col-8 mx-auto mt-3">
+      <div className="homeBody d-block col-12 mx-auto mt-3">
         
         <div className="profileHeader">
         <h3>Here is your collection.</h3>

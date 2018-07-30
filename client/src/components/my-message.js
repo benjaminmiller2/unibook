@@ -1,16 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 
 
-const MyMessage = ({title, id, image, buyer, buyer_email, handleClick}) => (
+const MyMessage = ({title, id, key, image, buyer, buyer_email, handleClick, handleClickOne}) => (
     <div>
     <div class="card w-75 mr-auto ml-auto mb-2">
-        <div class="card-body">
-        <h5 class="card-title">Unibook Message</h5>
-            <p class="card-text">Congrats! {buyer} is interested in purchasing {title}! You can email {buyer}
-            at {buyer_email} to make the arrangements!</p>
-            <button type="button" className="btn btn-primary" onClick={() => handleClick(id)}>Delete Message</button>
+        <div className="card-body ">
+        <h5 className="text-cards">Unibook Message</h5>
+            <p className="card-text">Congrats! <span className="text-cards-color">{buyer}</span> is interested in purchasing <span className="text-cards-color">{title}</span>!</p> 
+            <p>You can email <span className="text-cards-color">{buyer}</span> at <span className="text-cards-color">{buyer_email}</span> to make the arrangements!</p>
+            <button type="button" className="btn button-color" onClick={() => handleClick(id)}>Delete Message</button>
+            
         </div>
     </div>
 </div>
