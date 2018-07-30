@@ -124,6 +124,7 @@ class App extends Component {
           exact path="/messages"
           component={Messages} />
 
+<div className="bg-purple1 mb-0 mt-3 text-center text-white">Copyright 2018 BookBuddies</div>
       </div>
       </Router>
     );

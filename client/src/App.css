@@ -53,6 +53,12 @@
     opacity: 0.7;
   }
 
+  .bg-purple1{
+    height:2em;
+    background-color:#CF5C36;
+    opacity: 0.7;
+  }
+
   .profileHeader{
     padding: 15px;
     font-family: "Futura";
