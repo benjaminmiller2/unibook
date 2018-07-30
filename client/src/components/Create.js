@@ -105,7 +105,7 @@ class Create extends Component {
               </div>
               <div class="form-group">
                 <label for="publisher">Seller Email:</label>
-                <input type="text" class="form-control" name="seller" value={this.state.seller_email} onChange={this.onChange} placeholder="Seller" />
+                <input type="text" class="form-control" name="seller Email" value={this.state.seller_email} onChange={this.onChange} placeholder="Seller Email" />
               </div>
               <button type="submit" class="btn button-color mb-3">Submit</button>
             </form>

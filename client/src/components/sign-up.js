@@ -30,7 +30,7 @@ class Signup extends Component {
 		axios.post('/api/user/', {
 			username: this.state.username,
 			password: this.state.password,
-			email: this.state.password,
+			email: this.state.email,
 			redirectTo: null
 
 		})
