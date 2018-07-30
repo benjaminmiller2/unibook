@@ -195,3 +195,41 @@ a:hover {
   text-decoration: none;
   cursor: pointer;
 }
+
+
+@media (max-width: 1024px){
+  .Navbar-Component{
+    width: 100%;
+  }
+  .App-Component{
+    width: 100%;
+  }
+}
+.homeBody{
+  margin: auto;
+}
+
+@media (max-width: 768px){
+
+    .homeTitle{
+    font-size: 50px;
+  }
+.homeBody{
+  width: 100%;
+}
+  .subTitle{
+    display: none;
+  }
+}
+
+@media (max-width: 414px){
+
+    .homeTitle{
+    font-size: 50px;
+  }
+  .homeBody{
+    width: 100%;
+  }
+}
+
+

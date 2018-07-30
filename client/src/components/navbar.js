@@ -33,9 +33,9 @@ class Navbar extends Component {
         console.log(this.props);
         
         return (
-            <div>
+            <div className="">
 
-                <header className="w-100 p-3 bg" id="nav-container">
+                <header className="w-100 p-3 bg Navbar-Component" id="nav-container">
                     <div className="" >
                         {loggedIn ? (
                             <section className="w-100 d-flex">

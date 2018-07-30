@@ -70,7 +70,7 @@ class App extends Component {
   render() {
     return (
       <Router>
-      <div className="">
+      <div className="App-Component">
         <div>
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         </div>
