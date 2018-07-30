@@ -61,7 +61,7 @@ class LoginForm extends Component {
         } else {
             return (
                 <div>
-                    <form className="col-4 mx-auto border border-1 border-primary p-3 mt-5">
+                    <form className="col-4 mx-auto border border-1 border-primary p-3 mt-5 mb-5">
                         <div className="form-group">
                             <lable for="username">Username: </lable>
                             <input type="text" 
