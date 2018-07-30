@@ -40,7 +40,7 @@ class Navbar extends Component {
                         {loggedIn ? (
                             <section className="w-100 d-flex ">
  
-                                <Link to="/" className="btn btn-link text-secondary text-white">
+                                <Link to="/" className="btn btn-link text-secondary">
                                  Home
                                 </Link>
                                 <Link to="/profile" className="btn btn-link text-secondary">

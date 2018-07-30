@@ -60,7 +60,8 @@ class App extends Component {
         console.log('Get user: no user');
         this.setState({
           loggedIn: false,
-          username: null
+          username: null,
+
         })
       }
     })
