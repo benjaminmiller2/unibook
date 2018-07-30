@@ -5,37 +5,37 @@ var escapeRegExp = require('lodash/escapeRegExp');
 var map = require('lodash/map');
 
 /* GET ALL BOOKS */
-router.get('/', function(req, res, next) {
-  Book.find(function (err, products) {
-    if (err) return next(err);
-    res.json(products);
-  });
-});
+// router.get('/', function(req, res, next) {
+//   Book.find(function (err, products) {
+//    if (err) return next(err);
+//    res.json(products);
+//  });
+// });
 
 
 /* GET SINGLE BOOK BY ID */
-router.get('/:id', function(req, res, next) {
-  Book.findById(req.params.id, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
-  });
-});
+// router.get('/:id', function(req, res, next) {
+//  Book.findById(req.params.id, function (err, post) {
+ //   if (err) return next(err);
+ //   res.json(post);
+ // });
+// });
 
-/* GET SINGLE BOOK BY SINGLE USER */
-router.get('/:seller', function(req, res, next) {
-  Book.find(req.params.seller, function (err, post) {
-    if (err) return next(err);
-    res.json(post);
-  });
-});
+// /* GET SINGLE BOOK BY SINGLE USER */
+// router.get('/:seller', function(req, res, next) {
+//   Book.find(req.params.seller, function (err, post) {
+//    if (err) return next(err);
+//   res.json(post);
+//  });
+// });
 
 // /* SAVE BOOK */
-router.post('/', function(req, res, next) {
-  const book = new Book(req.body);
-  return book.save()
-  .then(newTask => res.status(201).json(newTask))
-  .catch(next)
- })
+// router.post('/', function(req, res, next) {
+//  const book = new Book(req.body);
+//  return book.save()
+//  .then(newTask => res.status(201).json(newTask))
+//  .catch(next)
+//  })
 
 // /*SEARCHING FOR TITLE
 router.get('/search/:title', function(req, res, next) {

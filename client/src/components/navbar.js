@@ -35,30 +35,30 @@ class Navbar extends Component {
         return (
             <div>
 
-                <header className="w-100 p-3 bg-purple" id="nav-container">
+                <header className="w-100 p-3 bg" id="nav-container">
                     <div className="" >
                         {loggedIn ? (
                             <section className="w-100 d-flex ">
  
-                                <Link to="/" className="btn btn-link text-secondary text-white">
+                                <Link to="/" className="navTitle">
                                  Home
                                 </Link>
-                                <Link to="/profile" className="btn btn-link text-secondary">
+                                <Link to="/profile" className="navTitle">
                                     Profile
                                 </Link>
-                                <Link to="/messages" className="btn btn-link text-secondary">
+                                <Link to="/messages" className="navTitle">
                                     Messages
                                 </Link>
-                                <Link to = "/Show" className = "btn btn-link text-secondary">
+                                <Link to = "/Show" className="navTitle">
                                    Show
                                 </Link>
-                                <Link to = "/Create" className = "btn btn-link text-secondary">
+                                <Link to = "/Create" className="navTitle">
                                     Create
                                 </Link>  
-                                <Link to ="/Search" className="btn btn-link text-secondary">
+                                <Link to ="/Search" className="navTitle">
                                 Search
                                 </Link>                        
-                                <Link to="/logout" className="btn btn-link text-secondary" onClick={this.logout}>
+                                <Link to="/logout" className="navTitle" onClick={this.logout}>
                                     Logout
                                 </Link>
 
@@ -69,10 +69,10 @@ class Navbar extends Component {
                         ) : (
                                 <section className="navbar-section">
                                     
-                                <Link to="/login" className="btn btn-link text-secondary">
+                                <Link to="/login" className="navTitle">
                                     <span className="text-light">Login</span>
 				                </Link>
-                                <Link to="/signup" className="btn btn-link text-secondary">
+                                <Link to="/signup" className="navTitle">
                                     <span className="text-light">Sign up</span>
 				                </Link>
 

@@ -69,8 +69,8 @@ render() {
 	} else {
 	
 		return (
-			<div>
-				<h4>Sign up</h4>
+			<div className="pt-2">
+				<center>Sign up</center>
 				<form className="col-4 mx-auto border border-1 border-primary p-3 mt-5">
                         <div className="form-group">
                             <lable for="username">Username: </lable>

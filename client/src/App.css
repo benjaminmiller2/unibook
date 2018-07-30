@@ -47,13 +47,13 @@
     margin-top: 20px;
   }
 
-  .bg-purple{
+  .bg{
     height:160px;
     background-color:#CF5C36;
     opacity: 0.7;
   }
 
-  .bg-purple1{
+  .bg-1{
     height:2em;
     background-color:#CF5C36;
     opacity: 0.7;
@@ -83,16 +83,33 @@
     
   }
 
+.form{
+      width: 400px;
+      background: #eff7d2;
+      color: #FFF;
+      padding: 20px;
+    }
+
   .homeTitle{
     font-size: 100px;
     font-family:'Fredericka the Great', cursive;
     text-align: Center;
+    color: #CF5C36;
   
+  }
+
+  .navTitle{
+    font-size: 45px;
+    font-family: 'Fredericka the Great', curisve;
+    text-align: Center;
+    padding: 10px;
+    color: #050517;
   }
 
   .subTitle{
     font-size: 40px;
     font-family: 'Futura';
+    color: #050517;
   }
 
   .createTitle{
@@ -121,3 +138,18 @@
     margin-left: 50px;
   }
 
+/* unvisited link */
+a:link {
+  color:#050517;
+}
+
+/* visited link */
+a:visited {
+  color: #050517;
+}
+
+/* mouse over link */
+a:hover {
+  color: #d3d5d7;
+  text-decoration: none;
+}

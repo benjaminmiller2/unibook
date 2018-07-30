@@ -36,7 +36,7 @@ render() {
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="createTitle">
-            Search through your collection
+            <center>Search through your collection</center>
           </h3>
         </div>
         <div class="panel-body">
@@ -61,7 +61,7 @@ render() {
               <label for="publisher">Publisher:</label>
               <input type="text" class="form-control" name="publisher" value={publisher} onChange={this.onChange} placeholder="Publisher" />
             </div>
-            <button type="submit" class="btn btn-default">Search</button>
+            <button type="submit" class="btn btn-default" onSubmit={this.onSubmit}>Search</button>
           </form>
         </div>
       </div>
